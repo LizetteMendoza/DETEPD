@@ -18,6 +18,8 @@
 
    
         @csrf
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre"><br>
         <label for="curp">CURP</label>
         <input type="text" name="curp" required><br>
         <label for="direccion">Dirreción</label>

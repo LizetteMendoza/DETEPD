@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('plantilla');
 });
 
 //Esta ruta integra todos los metodos estandar en el controlador de la solicitud (CRUD), 
