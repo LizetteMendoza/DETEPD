@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\FormaController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Esta ruta integra todos los metodos estandar en el controlador de la solicitud (CRUD), 
+//si se agregan se tiene que agregar su ruta idividual
+Route::resource('/solicitud', ApplicationController::class);
+
+//Ruta de sesiones
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

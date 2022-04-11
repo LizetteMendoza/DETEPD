@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Solicitud;
+use App\Models\Forma;
 use Illuminate\Http\Request;
 
-class SolicitudController extends Controller
+class FormaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        //
+        $aplicaciones = Forma::all();
+        return view('solicitantes.allSolicitante', compact('aplicaciones'));
     }
 
     /**
@@ -41,21 +42,22 @@ class SolicitudController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Solicitud  $solicitud
+     * @param  \App\Models\Forma  $forma
      * @return \Illuminate\Http\Response
      */
-    public function show(Solicitud $solicitud)
+    public function show(Forma $forma)
     {
-        //
+        dd($forma);
+        return view('solicitantes.showSolicitud', compact('forma'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Solicitud  $solicitud
+     * @param  \App\Models\Forma  $forma
      * @return \Illuminate\Http\Response
      */
-    public function edit(Solicitud $solicitud)
+    public function edit(Forma $forma)
     {
         //
     }
@@ -64,10 +66,10 @@ class SolicitudController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Solicitud  $solicitud
+     * @param  \App\Models\Forma  $forma
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Solicitud $solicitud)
+    public function update(Request $request, Forma $forma)
     {
         //
     }
@@ -75,10 +77,10 @@ class SolicitudController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Solicitud  $solicitud
+     * @param  \App\Models\Forma  $forma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Solicitud $solicitud)
+    public function destroy(Forma $forma)
     {
         //
     }
